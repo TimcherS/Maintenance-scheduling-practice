@@ -136,38 +136,60 @@ def schedule_figure(inst: Instance, schedules: dict, path) -> None:
 
 # --- сравнение методов ---
 
-def _grouped(ax, table: pd.DataFrame, methods, sizes, log=False):
-    """Сгруппированные столбцы: группы — размеры, столбцы — методы."""
+def _grouped(ax, table: pd.DataFrame, solved: pd.DataFrame, runs: pd.DataFrame, methods,
+             sizes, cap: float):
+    """Сгруппированные столбцы: группы — размеры, столбцы — методы.
+
+    Столбец выше cap обрезается, над ним пишется значение. Если метод решил
+    не все примеры группы, над столбцом пишется «решено k из n».
+    """
     n = len(methods)
     width = min(0.8 / n, 0.14)
     x = np.arange(len(sizes))
+
+    def cell(tab, sz, m):
+        return tab.loc[sz, m] if (sz in tab.index and m in tab.columns) else np.nan
+
     for j, m in enumerate(methods):
         label, color, _ = METHOD_STYLE[m]
-        vals = [table.loc[sz, m] if (sz in table.index and m in table.columns) else np.nan
-                for sz in sizes]
+        vals = np.array([cell(table, sz, m) for sz in sizes], dtype=float)
         pos = x + (j - (n - 1) / 2) * width
-        ax.bar(pos, np.nan_to_num(vals, nan=0), width * 0.92, color=color, label=label)
-        for p, v in zip(pos, vals):
+        ax.bar(pos, np.minimum(np.nan_to_num(vals, nan=0), cap), width * 0.92, color=color,
+               label=label)
+        for p, v, sz in zip(pos, vals, sizes):
+            k, total = cell(solved, sz, m), cell(runs, sz, m)
             if np.isnan(v):
-                ax.text(p, 0, "нет", rotation=90, ha="center", va="bottom", color=INK2,
-                        fontsize=7)
+                ax.text(p, cap * 0.01, "нет решения", rotation=90, ha="center", va="bottom",
+                        color=INK2, fontsize=7)
+                continue
+            notes = []
+            if v == 0:
+                notes.append("0 — лучшее")
+            if v > cap:
+                notes.append(f"{v:.0f} %")
+            if total and k < total:
+                notes.append(f"решено {int(k)} из {int(total)}")
+            if notes:
+                ax.text(p, min(v, cap) + cap * 0.01, ", ".join(notes), rotation=90,
+                        ha="center", va="bottom", color=INK2, fontsize=7)
     ax.set_xticks(x, [f"Размер {s}" for s in sizes])
+    ax.set_ylim(0, cap * 1.35)
     ax.grid(axis="x", visible=False)
-    if log:
-        ax.set_yscale("log")
 
 
-def comparison_figure(df: pd.DataFrame, path) -> None:
-    """Отклонение от лучшего решения и число конфликтов по размерам задач."""
+def comparison_figure(df: pd.DataFrame, path, cap: float = 150.0) -> None:
+    """Отклонение от лучшего известного решения по размерам задач."""
     _style()
     methods = [m for m in METHOD_STYLE if m in set(df["method"])]
     sizes = [s for s in SIZE_ORDER if s in set(df["size"])]
-    gap = df.pivot_table(index="size", columns="method", values="gap_best_pct", aggfunc="mean")
-    fig, ax = plt.subplots(figsize=(6.5, 3.2))
-    _grouped(ax, gap, methods, sizes)
+    d = df.assign(solved=df["objective"].notna())
+    gap = d.pivot_table(index="size", columns="method", values="gap_best_pct", aggfunc="mean")
+    solved = d.pivot_table(index="size", columns="method", values="solved", aggfunc="sum")
+    runs = d.pivot_table(index="size", columns="method", values="solved", aggfunc="size")
+    fig, ax = plt.subplots(figsize=(6.5, 3.4))
+    _grouped(ax, gap, solved, runs, methods, sizes, cap)
     ax.set_ylabel("Отклонение от лучшего, %")
-    ax.set_title("Качество решений (среднее по примерам; «нет» — решение не найдено)",
-                 loc="left")
+    ax.set_title("Качество решений: среднее по решённым примерам", loc="left")
     ax.legend(ncol=len(methods), loc="upper center", bbox_to_anchor=(0.5, -0.12))
     _save(fig, path)
 
@@ -177,7 +199,7 @@ def time_figure(df: pd.DataFrame, path) -> None:
     _style()
     methods = [m for m in METHOD_STYLE if m in set(df["method"])]
     sizes = [s for s in SIZE_ORDER if s in set(df["size"])]
-    fig, axes = plt.subplots(1, 2, figsize=(6.5, 3.0), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(6.5, 3.3), sharey=True, layout="constrained")
     for ax, col, title in zip(axes, ["t_first", "t_best"],
                               ["До первого решения", "До лучшего решения"]):
         tab = df.pivot_table(index="size", columns="method", values=col, aggfunc="mean")
@@ -195,30 +217,33 @@ def time_figure(df: pd.DataFrame, path) -> None:
         ax.set_title(title, loc="left")
         ax.grid(axis="x", visible=False)
     axes[0].set_ylabel("Время, с")
-    fig.legend(*axes[0].get_legend_handles_labels(), ncol=len(methods), loc="lower center",
-               bbox_to_anchor=(0.5, -0.08))
+    fig.legend(*axes[0].get_legend_handles_labels(), ncol=len(methods),
+               loc="outside lower center")
     _save(fig, path)
 
 
 def convergence_figure(histories: dict, path, title: str) -> None:
-    """Значение ЦФ лучшего найденного решения во времени."""
+    """Значение ЦФ лучшего найденного решения во времени (обе оси логарифмические)."""
     _style()
-    fig, ax = plt.subplots(figsize=(6.5, 3.2))
+    fig, ax = plt.subplots(figsize=(6.5, 3.2), layout="constrained")
     t_max = max((h[-1][0] for h in histories.values() if h), default=1)
     for m, hist in histories.items():
         if not hist:
             continue
         label, color, marker = METHOD_STYLE[m]
-        t = [p[0] for p in hist] + [t_max]
+        t = [max(p[0], 1e-3) for p in hist] + [t_max]
         v = [p[1] for p in hist] + [hist[-1][1]]
         ax.step(t, v, where="post", color=color, linewidth=1.6)
-        ax.plot(t[:-1], v[:-1], marker=marker, linestyle="", markersize=6, color=color,
-                markeredgecolor="white", markeredgewidth=1, label=label)
+        ax.plot(t[-2], v[-2], marker=marker, markersize=8, color=color,
+                markeredgecolor="white", markeredgewidth=1.2, zorder=5)
+        ax.plot([], [], color=color, marker=marker, markersize=7, linewidth=1.6,
+                label=f"{label}: {hist[-1][1]:.0f}")
     ax.set_xscale("log")
+    ax.set_yscale("log")
     ax.set_xlabel("Время, с")
-    ax.set_ylabel("Значение ЦФ")
-    ax.set_title(title, loc="left")
-    ax.legend(ncol=3)
+    ax.set_ylabel("ЦФ лучшего решения")
+    ax.set_title(title + " (маркер — последнее улучшение)", loc="left")
+    ax.legend(ncol=2, loc="upper right")
     _save(fig, path)
 
 
@@ -227,16 +252,21 @@ def sensitivity_figure(df: pd.DataFrame, param: str, metric: str, path, xlabel: 
     """Зависимость критерия от параметра задачи (по одному ряду на метод)."""
     _style()
     methods = [m for m in METHOD_STYLE if m in set(df["method"])]
-    tab = df.pivot_table(index="value", columns="method", values=metric, aggfunc="mean")
+    # Недопустимые решения (перегрузка бригад) сюда не входят: их ЦФ содержит штраф.
+    ok = df[df["feasible"].fillna(False).astype(bool)]
+    tab = ok.pivot_table(index="value", columns="method", values=metric, aggfunc="mean")
+    tab = tab.reindex(columns=methods)
     fig, ax = plt.subplots(figsize=(6.5, 3.0))
     for m in methods:
         label, color, marker = METHOD_STYLE[m]
         ax.plot(tab.index, tab[m], color=color, linewidth=1.6, marker=marker, markersize=6,
                 markeredgecolor="white", markeredgewidth=1, label=label)
+    ax.set_xticks(tab.index)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
-    ax.set_title(f"Чувствительность к параметру «{param}»", loc="left")
-    ax.legend(ncol=len(methods))
+    ax.set_title(f"Чувствительность к параметру «{param}» (только допустимые решения)",
+                 loc="left")
+    ax.legend(ncol=len(methods), loc="best")
     _save(fig, path)
 
 
