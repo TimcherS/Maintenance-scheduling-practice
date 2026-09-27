@@ -1,0 +1,1 @@
+{"instance": "M_capacity=1_s2", "method": "cpsat", "status": "infeasible", "starts": null, "time_total": 0.018070499994792044, "t_first": null, "t_best": null, "t_opt": null, "bound": 0.0, "history": [], "info": {"branches": 0, "conflicts_cp": 0, "workers": 8}}

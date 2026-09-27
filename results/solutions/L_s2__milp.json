@@ -1,0 +1,1 @@
+{"instance": "L_s2", "method": "milp", "status": "unknown", "starts": null, "time_total": 63.399175800033845, "t_first": null, "t_best": null, "t_opt": null, "bound": 62.0, "history": [], "info": {"nodes": 0, "solver": "highs", "vars": 13132, "constraints": 25169}}

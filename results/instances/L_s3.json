@@ -1,0 +1,2164 @@
+{
+ "name": "L_s3",
+ "n_machines": 20,
+ "neighbors": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   3
+  ],
+  [
+   3,
+   4
+  ],
+  [
+   4,
+   5
+  ],
+  [
+   5,
+   6
+  ],
+  [
+   6,
+   7
+  ],
+  [
+   7,
+   8
+  ],
+  [
+   8,
+   9
+  ],
+  [
+   9,
+   10
+  ],
+  [
+   10,
+   11
+  ],
+  [
+   11,
+   12
+  ],
+  [
+   12,
+   13
+  ],
+  [
+   13,
+   14
+  ],
+  [
+   14,
+   15
+  ],
+  [
+   15,
+   16
+  ],
+  [
+   16,
+   17
+  ],
+  [
+   17,
+   18
+  ],
+  [
+   18,
+   19
+  ]
+ ],
+ "capacity": 5,
+ "delta": 1,
+ "mode": "overlap",
+ "weights": {
+  "dev": 1,
+  "conf": 20,
+  "peak": 10,
+  "over": 1000
+ },
+ "meta": {
+  "generator": {
+   "n_machines": 20,
+   "horizon": 365,
+   "topology": "line",
+   "cycle": [
+    {
+     "name": "ТО-1",
+     "run": 30,
+     "dur": 1
+    },
+    {
+     "name": "ТО-2",
+     "run": 30,
+     "dur": 2
+    },
+    {
+     "name": "ТР",
+     "run": 30,
+     "dur": 4
+    }
+   ],
+   "run_spread": 0.2,
+   "tol": 0.15,
+   "sync": 0.5,
+   "seed": 3
+  }
+ },
+ "stops": [
+  {
+   "machine": 0,
+   "pos": 0,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 0,
+   "pos": 1,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 2,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 3,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 4,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 5,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 6,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 7,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 8,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 0,
+   "pos": 9,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 1,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 22,
+   "dur": 4,
+   "lo": 18,
+   "hi": 26
+  },
+  {
+   "machine": 1,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 29,
+   "dur": 2,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 29,
+   "dur": 4,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 29,
+   "dur": 2,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 29,
+   "dur": 4,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 29,
+   "dur": 2,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 29,
+   "dur": 4,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 1,
+   "pos": 10,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 2,
+   "pos": 0,
+   "kind": "ТО-1",
+   "run": 16,
+   "dur": 1,
+   "lo": 12,
+   "hi": 20
+  },
+  {
+   "machine": 2,
+   "pos": 1,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 2,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 3,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 4,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 5,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 6,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 7,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 8,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 9,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 10,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 11,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 2,
+   "pos": 12,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 3,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 23,
+   "dur": 4,
+   "lo": 19,
+   "hi": 27
+  },
+  {
+   "machine": 3,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 30,
+   "dur": 1,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 30,
+   "dur": 2,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 30,
+   "dur": 4,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 30,
+   "dur": 1,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 30,
+   "dur": 2,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 30,
+   "dur": 4,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 30,
+   "dur": 1,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 30,
+   "dur": 2,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 30,
+   "dur": 4,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 3,
+   "pos": 10,
+   "kind": "ТО-1",
+   "run": 30,
+   "dur": 1,
+   "lo": 26,
+   "hi": 34
+  },
+  {
+   "machine": 4,
+   "pos": 0,
+   "kind": "ТО-1",
+   "run": 1,
+   "dur": 1,
+   "lo": 0,
+   "hi": 6
+  },
+  {
+   "machine": 4,
+   "pos": 1,
+   "kind": "ТО-2",
+   "run": 31,
+   "dur": 2,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 2,
+   "kind": "ТР",
+   "run": 31,
+   "dur": 4,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 3,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 4,
+   "kind": "ТО-2",
+   "run": 31,
+   "dur": 2,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 5,
+   "kind": "ТР",
+   "run": 31,
+   "dur": 4,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 6,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 7,
+   "kind": "ТО-2",
+   "run": 31,
+   "dur": 2,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 8,
+   "kind": "ТР",
+   "run": 31,
+   "dur": 4,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 9,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 4,
+   "pos": 10,
+   "kind": "ТО-2",
+   "run": 31,
+   "dur": 2,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 5,
+   "pos": 0,
+   "kind": "ТО-2",
+   "run": 19,
+   "dur": 2,
+   "lo": 15,
+   "hi": 23
+  },
+  {
+   "machine": 5,
+   "pos": 1,
+   "kind": "ТР",
+   "run": 27,
+   "dur": 4,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 2,
+   "kind": "ТО-1",
+   "run": 27,
+   "dur": 1,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 3,
+   "kind": "ТО-2",
+   "run": 27,
+   "dur": 2,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 4,
+   "kind": "ТР",
+   "run": 27,
+   "dur": 4,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 5,
+   "kind": "ТО-1",
+   "run": 27,
+   "dur": 1,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 6,
+   "kind": "ТО-2",
+   "run": 27,
+   "dur": 2,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 7,
+   "kind": "ТР",
+   "run": 27,
+   "dur": 4,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 8,
+   "kind": "ТО-1",
+   "run": 27,
+   "dur": 1,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 9,
+   "kind": "ТО-2",
+   "run": 27,
+   "dur": 2,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 10,
+   "kind": "ТР",
+   "run": 27,
+   "dur": 4,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 5,
+   "pos": 11,
+   "kind": "ТО-1",
+   "run": 27,
+   "dur": 1,
+   "lo": 23,
+   "hi": 31
+  },
+  {
+   "machine": 6,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 17,
+   "dur": 4,
+   "lo": 13,
+   "hi": 21
+  },
+  {
+   "machine": 6,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 24,
+   "dur": 1,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 24,
+   "dur": 2,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 24,
+   "dur": 4,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 24,
+   "dur": 1,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 24,
+   "dur": 2,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 24,
+   "dur": 4,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 24,
+   "dur": 1,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 24,
+   "dur": 2,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 24,
+   "dur": 4,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 10,
+   "kind": "ТО-1",
+   "run": 24,
+   "dur": 1,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 11,
+   "kind": "ТО-2",
+   "run": 24,
+   "dur": 2,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 12,
+   "kind": "ТР",
+   "run": 24,
+   "dur": 4,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 6,
+   "pos": 13,
+   "kind": "ТО-1",
+   "run": 24,
+   "dur": 1,
+   "lo": 20,
+   "hi": 28
+  },
+  {
+   "machine": 7,
+   "pos": 0,
+   "kind": "ТО-2",
+   "run": 15,
+   "dur": 2,
+   "lo": 11,
+   "hi": 19
+  },
+  {
+   "machine": 7,
+   "pos": 1,
+   "kind": "ТР",
+   "run": 28,
+   "dur": 4,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 2,
+   "kind": "ТО-1",
+   "run": 28,
+   "dur": 1,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 3,
+   "kind": "ТО-2",
+   "run": 28,
+   "dur": 2,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 4,
+   "kind": "ТР",
+   "run": 28,
+   "dur": 4,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 5,
+   "kind": "ТО-1",
+   "run": 28,
+   "dur": 1,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 6,
+   "kind": "ТО-2",
+   "run": 28,
+   "dur": 2,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 7,
+   "kind": "ТР",
+   "run": 28,
+   "dur": 4,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 8,
+   "kind": "ТО-1",
+   "run": 28,
+   "dur": 1,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 9,
+   "kind": "ТО-2",
+   "run": 28,
+   "dur": 2,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 10,
+   "kind": "ТР",
+   "run": 28,
+   "dur": 4,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 7,
+   "pos": 11,
+   "kind": "ТО-1",
+   "run": 28,
+   "dur": 1,
+   "lo": 24,
+   "hi": 32
+  },
+  {
+   "machine": 8,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 25,
+   "dur": 4,
+   "lo": 20,
+   "hi": 30
+  },
+  {
+   "machine": 8,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 8,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 9,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 24,
+   "dur": 4,
+   "lo": 19,
+   "hi": 29
+  },
+  {
+   "machine": 9,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 32,
+   "dur": 1,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 32,
+   "dur": 2,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 32,
+   "dur": 4,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 32,
+   "dur": 1,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 32,
+   "dur": 2,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 32,
+   "dur": 4,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 32,
+   "dur": 1,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 32,
+   "dur": 2,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 9,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 32,
+   "dur": 4,
+   "lo": 27,
+   "hi": 37
+  },
+  {
+   "machine": 10,
+   "pos": 0,
+   "kind": "ТО-2",
+   "run": 2,
+   "dur": 2,
+   "lo": 0,
+   "hi": 6
+  },
+  {
+   "machine": 10,
+   "pos": 1,
+   "kind": "ТР",
+   "run": 25,
+   "dur": 4,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 2,
+   "kind": "ТО-1",
+   "run": 25,
+   "dur": 1,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 3,
+   "kind": "ТО-2",
+   "run": 25,
+   "dur": 2,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 4,
+   "kind": "ТР",
+   "run": 25,
+   "dur": 4,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 5,
+   "kind": "ТО-1",
+   "run": 25,
+   "dur": 1,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 6,
+   "kind": "ТО-2",
+   "run": 25,
+   "dur": 2,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 7,
+   "kind": "ТР",
+   "run": 25,
+   "dur": 4,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 8,
+   "kind": "ТО-1",
+   "run": 25,
+   "dur": 1,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 9,
+   "kind": "ТО-2",
+   "run": 25,
+   "dur": 2,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 10,
+   "kind": "ТР",
+   "run": 25,
+   "dur": 4,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 11,
+   "kind": "ТО-1",
+   "run": 25,
+   "dur": 1,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 12,
+   "kind": "ТО-2",
+   "run": 25,
+   "dur": 2,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 10,
+   "pos": 13,
+   "kind": "ТР",
+   "run": 25,
+   "dur": 4,
+   "lo": 21,
+   "hi": 29
+  },
+  {
+   "machine": 11,
+   "pos": 0,
+   "kind": "ТО-1",
+   "run": 7,
+   "dur": 1,
+   "lo": 3,
+   "hi": 11
+  },
+  {
+   "machine": 11,
+   "pos": 1,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 2,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 3,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 4,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 5,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 6,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 7,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 8,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 9,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 10,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 11,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 11,
+   "pos": 12,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 12,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 25,
+   "dur": 4,
+   "lo": 20,
+   "hi": 30
+  },
+  {
+   "machine": 12,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 12,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 13,
+   "pos": 0,
+   "kind": "ТО-1",
+   "run": 11,
+   "dur": 1,
+   "lo": 6,
+   "hi": 16
+  },
+  {
+   "machine": 13,
+   "pos": 1,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 2,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 3,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 4,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 5,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 6,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 7,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 8,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 13,
+   "pos": 9,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 21,
+   "hi": 31
+  },
+  {
+   "machine": 14,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 14,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 15,
+   "pos": 0,
+   "kind": "ТО-2",
+   "run": 5,
+   "dur": 2,
+   "lo": 0,
+   "hi": 10
+  },
+  {
+   "machine": 15,
+   "pos": 1,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 2,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 3,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 4,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 5,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 6,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 7,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 8,
+   "kind": "ТО-1",
+   "run": 33,
+   "dur": 1,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 9,
+   "kind": "ТО-2",
+   "run": 33,
+   "dur": 2,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 15,
+   "pos": 10,
+   "kind": "ТР",
+   "run": 33,
+   "dur": 4,
+   "lo": 28,
+   "hi": 38
+  },
+  {
+   "machine": 16,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 22,
+   "dur": 4,
+   "lo": 18,
+   "hi": 26
+  },
+  {
+   "machine": 16,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 29,
+   "dur": 2,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 29,
+   "dur": 4,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 29,
+   "dur": 2,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 29,
+   "dur": 4,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 29,
+   "dur": 2,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 29,
+   "dur": 4,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 16,
+   "pos": 10,
+   "kind": "ТО-1",
+   "run": 29,
+   "dur": 1,
+   "lo": 25,
+   "hi": 33
+  },
+  {
+   "machine": 17,
+   "pos": 0,
+   "kind": "ТО-1",
+   "run": 18,
+   "dur": 1,
+   "lo": 14,
+   "hi": 22
+  },
+  {
+   "machine": 17,
+   "pos": 1,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 2,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 3,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 4,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 5,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 6,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 7,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 8,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 9,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 10,
+   "kind": "ТО-2",
+   "run": 26,
+   "dur": 2,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 11,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 17,
+   "pos": 12,
+   "kind": "ТО-1",
+   "run": 26,
+   "dur": 1,
+   "lo": 22,
+   "hi": 30
+  },
+  {
+   "machine": 18,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 26,
+   "dur": 4,
+   "lo": 21,
+   "hi": 31
+  },
+  {
+   "machine": 18,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 34,
+   "dur": 1,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 34,
+   "dur": 2,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 18,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 34,
+   "dur": 4,
+   "lo": 29,
+   "hi": 39
+  },
+  {
+   "machine": 19,
+   "pos": 0,
+   "kind": "ТР",
+   "run": 24,
+   "dur": 4,
+   "lo": 19,
+   "hi": 29
+  },
+  {
+   "machine": 19,
+   "pos": 1,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 2,
+   "kind": "ТО-2",
+   "run": 31,
+   "dur": 2,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 3,
+   "kind": "ТР",
+   "run": 31,
+   "dur": 4,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 4,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 5,
+   "kind": "ТО-2",
+   "run": 31,
+   "dur": 2,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 6,
+   "kind": "ТР",
+   "run": 31,
+   "dur": 4,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 7,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 8,
+   "kind": "ТО-2",
+   "run": 31,
+   "dur": 2,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 9,
+   "kind": "ТР",
+   "run": 31,
+   "dur": 4,
+   "lo": 26,
+   "hi": 36
+  },
+  {
+   "machine": 19,
+   "pos": 10,
+   "kind": "ТО-1",
+   "run": 31,
+   "dur": 1,
+   "lo": 26,
+   "hi": 36
+  }
+ ]
+}
