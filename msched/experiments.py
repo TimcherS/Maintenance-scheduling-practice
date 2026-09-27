@@ -104,5 +104,16 @@ def summarize(df: pd.DataFrame, by) -> pd.DataFrame:
     cols = ["objective", "gap_best_pct", "sum_dev", "conflicts", "peak", "load_std",
             "t_first", "t_best", "t_total"]
     agg = df.groupby(by)[[c for c in cols if c in df]].mean().round(3)
-    agg["n_optimal"] = df.assign(opt=df["status"].eq("optimal")).groupby(by)["opt"].sum()
+    # Средние считаются только по найденным решениям, поэтому важно число решённых примеров.
+    flags = df.assign(
+        solved=df["objective"].notna(),
+        feasible_=df.get("feasible", pd.Series(False, index=df.index)).fillna(False).astype(bool),
+        optimal=df["status"].eq("optimal"),
+        infeasible_proved=df["status"].eq("infeasible"),
+    ).groupby(by)
+    agg["n_runs"] = flags.size()
+    agg["n_solved"] = flags["solved"].sum()
+    agg["n_feasible"] = flags["feasible_"].sum()
+    agg["n_optimal"] = flags["optimal"].sum()
+    agg["n_infeasible_proved"] = flags["infeasible_proved"].sum()
     return agg
