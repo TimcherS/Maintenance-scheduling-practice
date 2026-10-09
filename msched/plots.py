@@ -18,7 +18,6 @@ from .instance import Instance  # noqa: E402
 # Порядок цветов проверен на различимость при дальтонизме.
 METHOD_STYLE = {
     "milp": ("MILP (HiGHS)", "#2a78d6", "o"),
-    "milp_cbc": ("MILP (CBC)", "#eb6834", "s"),
     "cpsat": ("CP-SAT", "#1baf7a", "D"),
     "h1": ("H1", "#eda100", "^"),
     "h1h2": ("H1+H2", "#e87ba4", "v"),

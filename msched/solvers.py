@@ -9,7 +9,7 @@ from .instance import Instance
 from .milp import solve_milp
 from .result import SolveResult, Tracker
 
-METHODS = ("milp", "milp_cbc", "cpsat", "h1", "h1h2", "ga")
+METHODS = ("milp", "cpsat", "h1", "h1h2", "ga")
 
 
 def solve(inst: Instance, method: str, time_limit: float = 60.0, seed: int = 0,
@@ -18,8 +18,6 @@ def solve(inst: Instance, method: str, time_limit: float = 60.0, seed: int = 0,
     bound, info = None, {}
     if method == "milp":
         starts, status, bound, info = solve_milp(inst, time_limit, tr, **kwargs)
-    elif method == "milp_cbc":
-        starts, status, bound, info = solve_milp(inst, time_limit, tr, solver="cbc", **kwargs)
     elif method == "cpsat":
         starts, status, bound, info = solve_cpsat(inst, time_limit, tr, seed=seed, **kwargs)
     elif method == "h1":

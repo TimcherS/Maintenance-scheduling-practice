@@ -1,53 +1,44 @@
   S_s1                         milp   feasible  ЦФ=     23.0 t_best=  18.62 с  всего=  60.14 с
-  S_s1                         milp_cbc feasible  ЦФ=     24.0 t_best=   8.79 с  всего=  60.08 с
   S_s1                         cpsat  optimal   ЦФ=     21.0 t_best=   0.12 с  всего=   0.38 с
   S_s1                         h1     heuristic ЦФ=     23.0 t_best=   0.00 с  всего=   0.00 с
   S_s1                         h1h2   heuristic ЦФ=     21.0 t_best=   0.81 с  всего=  15.92 с
   S_s1                         ga     heuristic ЦФ=     25.0 t_best=   1.39 с  всего=   3.77 с
   S_s2                         milp   optimal   ЦФ=     22.0 t_best=  21.99 с  всего=  27.40 с
-  S_s2                         milp_cbc feasible  ЦФ=     23.0 t_best=   6.94 с  всего=  60.01 с
   S_s2                         cpsat  optimal   ЦФ=     22.0 t_best=   0.03 с  всего=   0.05 с
   S_s2                         h1     heuristic ЦФ=     25.0 t_best=   0.00 с  всего=   0.00 с
   S_s2                         h1h2   heuristic ЦФ=     23.0 t_best=   2.46 с  всего=   9.45 с
   S_s2                         ga     heuristic ЦФ=     23.0 t_best=   0.30 с  всего=   1.67 с
   S_s3                         milp   optimal   ЦФ=     17.0 t_best=   1.21 с  всего=   5.45 с
-  S_s3                         milp_cbc optimal   ЦФ=     17.0 t_best=   5.34 с  всего=   8.85 с
   S_s3                         cpsat  optimal   ЦФ=     17.0 t_best=   0.01 с  всего=   0.04 с
   S_s3                         h1     heuristic ЦФ=     20.0 t_best=   0.00 с  всего=   0.00 с
   S_s3                         h1h2   heuristic ЦФ=     17.0 t_best=   0.18 с  всего=   8.93 с
   S_s3                         ga     heuristic ЦФ=     18.0 t_best=   2.45 с  всего=   4.78 с
   M_s1                         milp   feasible  ЦФ=     65.0 t_best=  31.51 с  всего=  60.41 с
-  M_s1                         milp_cbc unknown   ЦФ=      nan t_best=   0.00 с  всего=  60.06 с
   M_s1                         cpsat  optimal   ЦФ=     40.0 t_best=   3.26 с  всего=   3.49 с
   M_s1                         h1     heuristic ЦФ=     83.0 t_best=   0.01 с  всего=   0.01 с
   M_s1                         h1h2   heuristic ЦФ=     47.0 t_best=  40.37 с  всего=  60.00 с
   M_s1                         ga     heuristic ЦФ=     66.0 t_best=  11.85 с  всего=  15.01 с
   M_s2                         milp   feasible  ЦФ=     33.0 t_best=  14.47 с  всего=  60.39 с
-  M_s2                         milp_cbc feasible  ЦФ=     44.0 t_best=  53.85 с  всего=  60.09 с
   M_s2                         cpsat  optimal   ЦФ=     32.0 t_best=   0.45 с  всего=   0.46 с
   M_s2                         h1     heuristic ЦФ=     49.0 t_best=   0.01 с  всего=   0.01 с
   M_s2                         h1h2   heuristic ЦФ=     34.0 t_best=  13.73 с  всего=  60.00 с
   M_s2                         ga     heuristic ЦФ=     41.0 t_best=   2.92 с  всего=   6.13 с
   M_s3                         milp   feasible  ЦФ=     52.0 t_best=  20.02 с  всего=  60.43 с
-  M_s3                         milp_cbc feasible  ЦФ=     71.0 t_best=  40.36 с  всего=  59.89 с
   M_s3                         cpsat  optimal   ЦФ=     39.0 t_best=   1.84 с  всего=   1.85 с
   M_s3                         h1     heuristic ЦФ=     51.0 t_best=   0.01 с  всего=   0.01 с
   M_s3                         h1h2   heuristic ЦФ=     41.0 t_best=  54.75 с  всего=  60.00 с
   M_s3                         ga     heuristic ЦФ=     52.0 t_best=   4.17 с  всего=   5.83 с
   L_s1                         milp   unknown   ЦФ=      nan t_best=   0.00 с  всего=  61.91 с
-  L_s1                         milp_cbc unknown   ЦФ=      nan t_best=   0.00 с  всего= 105.55 с
   L_s1                         cpsat  feasible  ЦФ=    128.0 t_best=  58.96 с  всего=  60.17 с
   L_s1                         h1     heuristic ЦФ=    260.0 t_best=   0.05 с  всего=   0.05 с
   L_s1                         h1h2   heuristic ЦФ=    170.0 t_best=  58.83 с  всего=  60.00 с
   L_s1                         ga     heuristic ЦФ=    316.0 t_best=  21.79 с  всего=  25.35 с
   L_s2                         milp   unknown   ЦФ=      nan t_best=   0.00 с  всего=  63.40 с
-  L_s2                         milp_cbc unknown   ЦФ=      nan t_best=   0.00 с  всего=  66.32 с
   L_s2                         cpsat  feasible  ЦФ=    123.0 t_best=  38.42 с  всего=  60.11 с
   L_s2                         h1     heuristic ЦФ=    170.0 t_best=   0.03 с  всего=   0.03 с
   L_s2                         h1h2   heuristic ЦФ=    133.0 t_best=  56.42 с  всего=  60.00 с
   L_s2                         ga     heuristic ЦФ=    278.0 t_best=  14.18 с  всего=  17.13 с
   L_s3                         milp   feasible  ЦФ=   1575.0 t_best=   7.37 с  всего=  63.09 с
-  L_s3                         milp_cbc unknown   ЦФ=      nan t_best=   0.00 с  всего=  58.83 с
   L_s3                         cpsat  feasible  ЦФ=    105.0 t_best=  57.60 с  всего=  60.14 с
   L_s3                         h1     heuristic ЦФ=    185.0 t_best=   0.05 с  всего=   0.05 с
   L_s3                         h1h2   heuristic ЦФ=    142.0 t_best=  56.79 с  всего=  60.00 с

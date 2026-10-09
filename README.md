@@ -13,7 +13,6 @@
 | Код | Метод | Модуль |
 |---|---|---|
 | `milp` | MILP с индексацией по времени: модель на PuLP, решатель HiGHS | `msched/milp.py` |
-| `milp_cbc` | Та же модель MILP, решатель CBC (встроен в PuLP) | `msched/milp.py` |
 | `cpsat` | Модель программирования в ограничениях, Google OR-Tools CP-SAT | `msched/cpsat.py` |
 | `h1` | Жадная эвристика H1 | `msched/heuristics.py` |
 | `h1h2` | H1 + итерированный локальный поиск H2 | `msched/heuristics.py` |

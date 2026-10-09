@@ -1,1 +1,0 @@
-{"instance": "L_s1", "method": "milp_cbc", "status": "unknown", "starts": null, "time_total": 105.5497751000803, "t_first": null, "t_best": null, "t_opt": null, "bound": null, "history": [], "info": {"solver": "cbc", "vars": 14417, "constraints": 29070}}

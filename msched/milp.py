@@ -1,4 +1,4 @@
-"""Модель MILP с индексацией по времени (PuLP, решатели HiGHS и CBC).
+"""Модель MILP с индексацией по времени (PuLP, решатель HiGHS).
 
 Переменные:
   x[a][k] ∈ {0,1} — останов a начинается в момент est[a] + k;
@@ -7,10 +7,6 @@
   P ∈ Z           — пиковое число одновременных остановов.
 """
 from __future__ import annotations
-
-import re
-import tempfile
-from pathlib import Path
 
 import numpy as np
 import pulp
@@ -99,32 +95,6 @@ class _HiGHSWithTracker(pulp.HiGHS):
         lp.solverModel.run()
 
 
-# Строка журнала CBC о новом целочисленном решении, например:
-# "Cbc0012I Integer solution of 65 found by DiveCoefficient after 0 iterations
-#  and 0 nodes (0.52 seconds)"
-_CBC_SOLUTION = re.compile(r"Integer solution of (\S+) found.*\(([\d.]+) seconds\)")
-
-
-def _solve_cbc(prob: pulp.LpProblem, time_limit: float, tracker: Tracker, verbose: bool):
-    """CBC не даёт обратных вызовов, поэтому моменты решений берутся из его журнала."""
-    t_build = tracker.elapsed()
-    with tempfile.TemporaryDirectory() as tmp:
-        log_path = Path(tmp) / "cbc.log"
-        prob.solve(pulp.PULP_CBC_CMD(msg=verbose, timeLimit=float(time_limit), gapRel=0.0,
-                                     logPath=str(log_path)))
-        log = log_path.read_text(errors="ignore") if log_path.exists() else ""
-    for value, sec in _CBC_SOLUTION.findall(log):
-        tracker.history.append((t_build + float(sec), float(value)))
-    tracker.history.sort()
-    # Оставляем только улучшения.
-    best = []
-    for t, v in tracker.history:
-        if not best or v < best[-1][1] - 1e-9:
-            best.append((t, v))
-    tracker.history[:] = best
-    return {}
-
-
 def _solve_highs(prob: pulp.LpProblem, time_limit: float, tracker: Tracker, verbose: bool):
     prob.solve(_HiGHSWithTracker(tracker, msg=verbose, timeLimit=float(time_limit), gapRel=0.0))
     info = prob.solverModel.getInfo()  # объект highspy.Highs после решения
@@ -132,16 +102,10 @@ def _solve_highs(prob: pulp.LpProblem, time_limit: float, tracker: Tracker, verb
 
 
 def solve_milp(inst: Instance, time_limit: float = 60.0, tracker: Tracker | None = None,
-               verbose: bool = False, solver: str = "highs"):
-    """solver — "highs" (HiGHS через highspy) или "cbc" (CBC, встроен в PuLP)."""
+               verbose: bool = False):
     tracker = tracker or Tracker()
     prob, x = build_milp(inst)
-    if solver == "highs":
-        stats = _solve_highs(prob, time_limit, tracker, verbose)
-    elif solver == "cbc":
-        stats = _solve_cbc(prob, time_limit, tracker, verbose)
-    else:
-        raise ValueError(f"неизвестный решатель: {solver}")
+    stats = _solve_highs(prob, time_limit, tracker, verbose)
 
     # sol_status отличает оптимум от решения, найденного к концу лимита времени.
     if prob.sol_status == pulp.LpSolutionOptimal:
@@ -161,6 +125,6 @@ def solve_milp(inst: Instance, time_limit: float = 60.0, tracker: Tracker | None
         tracker.record(pulp.value(prob.objective))
 
     bound = stats.pop("bound", None)
-    stats.update({"solver": solver, "vars": len(prob.variables()),
+    stats.update({"solver": "highs", "vars": len(prob.variables()),
                   "constraints": len(prob.constraints)})
     return starts, status, bound, stats
